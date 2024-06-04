@@ -44,7 +44,7 @@ web_server:
   port: 80
 
 dashboard_import:
-  package_import_url: github://esphome/example-configs/esphome-web/esp8266.yaml@main
+  package_import_url: github://balzreber/esphome_configs/camPrivacyShield.yaml@main
   import_full_config: true
 
 time:
