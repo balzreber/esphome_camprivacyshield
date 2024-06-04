@@ -45,7 +45,7 @@ web_server:
 
 dashboard_import:
   package_import_url: github://balzreber/esphome_configs/camPrivacyShield.yaml@main
-  import_full_config: true
+  import_full_config: false
 
 time:
   - platform: homeassistant
