@@ -34,12 +34,12 @@ time:
   - platform: homeassistant
 
 light:
-  - platform: fastled_clockless
-    chipset: WS2812B
+  - platform: neopixelbus
+    type: GRB
+    variant: WS2812B
     pin: GPIO02
     num_leds: 5
-    rgb_order: BRG
-    name: "FastLED WS2812B Light"
+    name: "NeoPixel Light"
 
 text_sensor:
   - platform: template
