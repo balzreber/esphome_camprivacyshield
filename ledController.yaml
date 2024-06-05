@@ -48,6 +48,14 @@ dashboard_import:
 time:
   - platform: homeassistant
 
+light:
+  - platform: fastled_clockless
+    chipset: WS2812B
+    pin: GPIO02
+    num_leds: 5
+    rgb_order: BRG
+    name: "FastLED WS2812B Light"
+
 text_sensor:
   - platform: template
     name: 'Version'
