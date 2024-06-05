@@ -37,7 +37,7 @@ light:
   - platform: neopixelbus
     type: GRB
     variant: WS2812X
-    pin: GPIO02
+    pin: GPIO2
     num_leds: 5
     name: "NeoPixel Light"
 
