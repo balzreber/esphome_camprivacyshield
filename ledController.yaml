@@ -34,10 +34,6 @@ api:
 ota:
   password: "fbf0d033b54f5a7158d663ec8f378e25"
 
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
 web_server:
   port: 80
 
