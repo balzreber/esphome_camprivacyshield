@@ -4,7 +4,8 @@ substitutions:
   name: "ledstripdevelopment01"
   friendly_name: "LED Strip Development 01"
   device_description: 'bHive LED Strip Controller'
-  project_version: '0.1'
+  number_of_leds: '1'
+  project_version: '1.0'
   loglevel: DEBUG
   update_interval: 1min
 
@@ -37,9 +38,21 @@ light:
   - platform: neopixelbus
     type: GRB
     variant: WS2812X
-    pin: GPIO4
-    num_leds: 5
-    name: "NeoPixel Light"
+    pin: GPIO4 # DO2 on Nodemcu
+    num_leds: '${number_of_leds}'
+    name: '${friendly_name}'
+    effects:
+      - pulse:
+      - random:
+      - strobe:
+      - flicker:
+      - addressable_rainbow:
+      - addressable_color_wipe:
+      - addressable_scan:
+      - addressable_twinkle:
+      - addressable_random_twinkle:
+      - addressable_fireworks:
+      - addressable_flicker:
 
 text_sensor:
   - platform: template
@@ -61,6 +74,12 @@ text_sensor:
     ssid:
       name: 'Connected WiFi'
       icon: 'mdi:wifi'
+  - platform: template
+    name: 'Number of LEDs'
+    icon: 'mdi:led-outline'
+    entity_category: diagnostic
+    lambda: |-
+      return {"${number_of_leds}"};
 
 sensor:
   - platform: wifi_signal
